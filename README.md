@@ -18,11 +18,21 @@ It analyzes the BPI Challenge 2017 (BPIC-17) event log with process mining: simp
 ├── .gitignore                      # excludes .venv/
 ├── requirements.txt                # direct dependencies (what the project uses)
 ├── requirements.lock.txt           # exact versions of all installed packages
-├── assignmentI.ipynb               # main notebook 
+├── assignmentI.ipynb               # main notebook (run this one)
 ├── ai-log.md                       # declaration of GenAI usage
-└── data_BPIChallenge2017_1_all/    # dataset folder (see note below)
-    ├── BPI Challenge 2017.xes.gz   # BPIC-17 event log (XES, gzip-compressed)
-    └── DATA.xml                    # metadata describing the structure of the log
+├── Assignment_I_instructions.pdf   # instructions for the assignment
+├── data_BPIChallenge2017_1_all/    # dataset folder (see note below)
+│   ├── BPI Challenge 2017.xes.gz   # BPIC-17 event log (XES, gzip-compressed)
+│   └── DATA.xml                    # metadata describing the structure of the log
+└── generated_files/                # outputs created by running the notebook
+    ├── alpha_model.pnml
+    ├── heuristics_model.pnml
+    ├── inductive_model.pnml
+    ├── grid_results.csv
+    ├── final_model.bpmn
+    ├── final_model.pdf
+    ├── Case_duration_and_outcome_distribution.pdf
+    └── Outcome_by_loan_attributes_by_application_type.pdf
 ```
 
 ## Notebook contents
