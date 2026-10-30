@@ -5,4 +5,3 @@ matplotlib==3.11.2
 graphviz==0.21
 ipykernel==7.4.0
 ipywidgets==8.1.9
-r4pm==0.6.2

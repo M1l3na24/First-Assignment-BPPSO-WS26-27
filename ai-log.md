@@ -100,3 +100,22 @@ Things to mention in the report
 Length vs duration: case length and case duration are almost unrelated (rank correlation of −0.04). Short cases by events are actually the slowest, because they wait for a time-out. That is why I defined short and long by events and show the duration extremes separately.
 Lifecycle events: the lengths count every lifecycle event (schedule, start, suspend, resume, complete), so a case’s length depends on how many times its work items were suspended. If section 3.3 works on the complete-only log, lengths will be shorter. State which log you use here.
 Display: the example tables show timestamps with the time since the first event. For long cases I limited the table to 25 rows, with the full sequence in the one-line summary.
+
+- **Gemini - 27/10/26**
+
+**Promt:** I want to visualise this as a stair. return " -> \n".join(f"{a} (X{n})" if n > 1 else a for a, n in runs)
+
+**Output:** def compact_trace(case_id):
+    """Activity sequence as a visual staircase; consecutive repeats are collapsed."""
+    seq = df.loc[df[case] == case_id, act].tolist()
+    runs = [(a, sum(1 for _ in g)) for a, g in itertools.groupby(seq)]
+    
+    # Use enumerate to multiply the indent spaces (e.g., 4 spaces per step)
+    return "\n".join(f"{'    ' * i}↳ {a} (x{n})" if n > 1 else f"{'    ' * i}↳ {a}" 
+                     for i, (a, n) in enumerate(runs))
+
+- **Claude - 30/10/26**
+
+**Prompt:** Asked for help writing the `README.md` of the repository: instructions for setting up the virtual environment (later adapted to `uv`, a `requirements.txt` plus a lock file, and VS Code), a note that the BPIC-17 dataset is included because the official website was unreachable, and the repository structure with the dataset folder and its files. After uploading the assignment instructions, asked to update the README to match them, and later to add the new `generated_files/` folder, `LICENSE`, `ai-log.md`, and the reproducibility instructions for VS Code.
+
+**Output:** A draft `README.md` with the project description, the repository tree, the dataset note, step-by-step environment setup with `uv` and VS Code (including a check that the notebook uses the project's `.venv`), a table of tools and libraries, a reproducibility section, and a troubleshooting section, plus an updated directory tree. The author adapted the text to the final project structure.

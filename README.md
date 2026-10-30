@@ -107,7 +107,7 @@ If `pyproject.toml` and `uv.lock` are not available:
 ```bash
 uv init --bare
 uv python pin 3.12
-uv add pm4py==2.7.23.11 pandas==3.0.6 numpy==2.5.4 matplotlib==3.11.2 ipykernel==7.4.0 r4pm==0.6.2
+uv add pm4py==2.7.23.11 pandas==3.0.6 numpy==2.5.4 matplotlib==3.11.2 ipykernel==7.4.0
 ```
 All analyses and quality metrics are computed in Python with the open-source tools above; no commercial software is used.
 
