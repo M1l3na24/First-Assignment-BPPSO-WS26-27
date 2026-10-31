@@ -1,0 +1,11 @@
+,Final model
+fitness_tbr,0.95
+fit_traces_tbr,0.253
+precision_tbr,0.451
+generalization_tbr,0.933
+simplicity,0.661
+NOA,23.0
+AGD,3.267
+fitness_align,0.915
+fit_traces_align,0.252
+precision_align,0.451
