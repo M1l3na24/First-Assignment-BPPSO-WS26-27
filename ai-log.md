@@ -5,6 +5,7 @@
 ## Tools
 - Gemini
 - Claude
+- ChatGPT
 
 ---------------------
 ## Usage philosophy
@@ -119,3 +120,39 @@ Display: the example tables show timestamps with the time since the first event.
 **Prompt:** Asked for help writing the `README.md` of the repository: instructions for setting up the virtual environment (later adapted to `uv`, a `requirements.txt` plus a lock file, and VS Code), a note that the BPIC-17 dataset is included because the official website was unreachable, and the repository structure with the dataset folder and its files. After uploading the assignment instructions, asked to update the README to match them, and later to add the new `generated_files/` folder, `LICENSE`, `ai-log.md`, and the reproducibility instructions for VS Code.
 
 **Output:** A draft `README.md` with the project description, the repository tree, the dataset note, step-by-step environment setup with `uv` and VS Code (including a check that the notebook uses the project's `.venv`), a table of tools and libraries, a reproducibility section, and a troubleshooting section, plus an updated directory tree. The author adapted the text to the final project structure.
+
+- **Claude - 31/10/26**
+
+**Prompt:** Uploaded my notebook and the task text for the final process model (replay about 80% of the cases, precision, generalization, simplicity, BPMN 2.0, metric trade-offs for a simulation base model) and asked for help. Later uploaded the results table and the metrics of the model that did not reach 80%, and asked whether to keep changing the grids.
+
+**Output:** Diagnosed that my models had high log fitness but almost no fitting traces, and that my F-score selection criterion favored models that missed the target. Proposed filtering to the most frequent variants, discovering with the Inductive Miner, and picking by a rule: first reach about 80% fitting traces, then maximize precision, then simplicity. Argued the metric priority from the simulation purpose (precision first, generalization last). Delivered final_process_model.py (iteration grid, selection, alignment-based metrics, PNML and BPMN export), tested only on a synthetic log. After my results, explained that noise thresholds of 0.45–0.55 were discarding behavior and recommended rerunning with noise between 0.0 and 0.1.
+
+- **Claude - 31/10/26**
+
+**Prompt:** Asked for help with Task 3.3 (process discovery and quality metrics) on BPIC-17: reviewing my notebook, using Alpha Miner, Heuristics Miner and Inductive Miner, designing a grid search with justified hyperparameter values, computing alignment-based and token-based metrics, and implementing additional simplicity metrics based on a literature review paper on process model complexity. Also asked about lines of code I did not understand (stable sorting, accessing the first trace and event of the dataframe, the meaning of TBR) and about an "easy sound" exception raised by PM4Py.
+
+**Output:** A review of the notebook that identified errors (Alpha Miner used instead of Alpha Miner+, undefined variable names, a silently failing simplicity call), a grid-search design with the reasoning for each parameter range, and code cells for alignment-based and token-based evaluation of each algorithm. Claude explained that alignments cannot be applied to a model that is not easy sound, and proposed the CFC and CNC metrics (from the reviewed paper) together with documented implementations of the custom metrics (NOA, AGD, CFC, CNC). The code was tested by Claude only on synthetic logs; results on BPIC-17 were obtained and interpreted by me.
+
+- **Claude - 31/10/26**
+
+**Prompt:** Asked whether the event log should be split into training and test sets before discovery and evaluation (after another tool suggested it), and for help writing an email to my professor about it. Then asked how to construct the final process model (hand-drawn Petri net or another method), how to reach about 80% replayed cases, how to experiment with iterations, and how to fix an error when running my iteration function.
+
+**Output:** A discussion of when a train/test split is useful and when it is not required by the assignment, plus a draft email in English to the professor. A proposed workflow to build the final model iteratively using process trees (editing the model as text, measuring each version with token-based replay, recording every change in a design log) and exporting to BPMN 2.0 and PDF. Claude also explained and fixed the error caused by passing a Petri net where a process tree was expected, and suggested example iteration cells (variant-coverage filtering, noise threshold, manual edits). The suggestions were tested by Claude only on a synthetic log.
+
+- **Gemini - 31/10/26**
+
+**Prompt:** Asked for help polishing a report note on metric constraints and generating Python code to build a comparative metrics table (combining PM4Py metrics with custom NOA and AGD simplicity metrics) for Alpha, Inductive, and Heuristics miners. Requested clarification on log splitting, process tree behavior, and custom docstrings for filtering, discovery, and evaluation helper functions. Asked for an interpretation of the grid search results to select the optimal model. Finally, asked for a workaround to export and visualize Petri nets and BPMN models as PDFs in Google Colab, bypassing local Intel Mac Graphviz dependency issues.
+
+**Output:** Refined the metric constraint note and provided standalone evaluation cells and Pandas DataFrame code for the final report. Clarified the chronological necessity of train/test splitting to ensure valid generalization scores. Formatted the requested docstrings. Analyzed the grid search table, recommending the 0.75 coverage configuration to avoid structural entanglement (spaghetti models). Provided a workflow to export the model locally as a `.ptml` (Process Tree) file, upload it to Colab, and use PM4Py to convert, visualize, and save the final BPMN and Petri net models as PDFs.
+
+- **ChatGPT - 31/10/26**
+
+**Prompt:** Asked for help continuing the implementation of an unsupervised K-means clustering analysis in Google Colab using the BPI Challenge 2017 event log in XES format. Uploaded the notebook for review and requested step-by-step guidance, preserving the previously established methodology. Implemented a grid search over K-means configurations, comparing Silhouette, Davies–Bouldin, Calinski–Harabasz, and inertia, with training, validation, and test sets to prevent data leakage. After sharing the results, asked for help evaluating the selected two-cluster model and interpreting cluster distributions, process complexity, performance, activity patterns, transitions, and resource collaboration.
+
+**Output:** Reviewed the notebook and provided the next implementation cells for grid search, final test-set evaluation, and cluster interpretation. Identified K=2 as the strongest initial configuration based on validation metrics, with a test Silhouette score of 0.2554 and two clusters containing 69.17% and 30.83% of test cases. Provided code to compare case duration, event counts, resource involvement, handovers, most frequent activities and transitions, and visualizations. Also highlighted methodological considerations, including avoiding indiscriminate duplicate removal, interpreting inter-event times carefully, and checking the influence of different feature groups on clustering.
+
+- **ChatGPT - 31/10/26**
+
+**Prompt:** Uploaded updated versions of the Google Colab notebook at different implementation stages and requested continued assistance based on the actual notebook outputs, rather than restarting the analysis.
+
+**Output:** Reviewed the successive notebook versions and guided the analysis incrementally, explaining the purpose of each implementation stage and requesting the relevant outputs before proceeding.
