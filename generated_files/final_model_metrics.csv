@@ -5,7 +5,9 @@ precision_tbr,0.579
 generalization_tbr,0.988
 simplicity,0.671
 NOA,23.0
-AGD,3.143
+AGD,3.317
+CFC,50.0
+CNC,1.245
 fitness_align,0.983
 fit_traces_align,0.851
 precision_align,0.582
