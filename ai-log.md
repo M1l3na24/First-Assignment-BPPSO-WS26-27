@@ -10,6 +10,7 @@
 ---------------------
 ## Usage philosophy
 
+I decided to use AI for the initial exploration of potential implementation ideas, highly technical implementations, error handling, and discussion of results.
 
 -----------------
 ## Usage entries
