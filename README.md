@@ -7,7 +7,7 @@
 
 This repository contains my code for the first assignment. 
 
-It analyzes the BPI Challenge 2017 (BPIC-17) event log with process mining: simple event log analysis, process discovery with three algorithms (Alpha Miner, Heuristics Miner, Inductive Miner) including hyperparameter tuning, evaluation with the four quality dimensions (fitness, precision, generalization, simplicity), construction of a final BPMN 2.0 model, and an advanced data science analysis. The accompanying report is written separately but can be also found in this repo :)
+It analyzes the BPI Challenge 2017 (BPIC-17) event log with process mining: simple event log analysis, process discovery with three algorithms (Alpha Miner, Heuristics Miner, Inductive Miner) including hyperparameter tuning, evaluation with the four quality dimensions (fitness, precision, generalization, simplicity), construction of a final BPMN 2.0 model, and an advanced data science analysis (clustering). The accompanying report is written separately but can be also found in this repo :)
 
 ## Repository structure
 

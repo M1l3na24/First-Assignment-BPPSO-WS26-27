@@ -268,3 +268,11 @@ I analyzed four papers: the three category winners and one of personal interest.
 \paragraph{Academic \cite{rodrigues2017stairway}} Honestly, the academic winners distinguished themselves through exhaustive conformance checking. They built 19 Petri nets in Yasper and evaluated them in ProM, reaching a final AS-IS model with 97.28\% replay fitness and 98.72\% Align-ETConformance precision. They found that more offers improved success rates, while validation calls merely shifted the proportions between Denied and Cancelled applications.
 
 \paragraph{Additional \cite{dadashnia2017exploring}} This paper stood out for me by using deep learning and unsupervised clustering of activities. Alongside Disco, Aris, Python, R, Weka and Tensorflow, they used the RefMod-Miner prototype to cluster process data into subprocess fragments, and a CNN to predict next steps against LSTMs (both too computationally exhaustive for me to reproduce locally). Chi-square tests linked incompleteness and multiple offers to a Pending outcome.
+
+---
+
+- **Claude - 08/11/26**
+
+**Promt:** this is my final project, help me check the readme file, https://github.com/M1l3na24/First-Assignment-BPPSO-WS26-27/tree/main give me the corrected version in case it need changes
+
+**Output:** Readme corrected. It was the baseline for the actual readme found in the repository.
