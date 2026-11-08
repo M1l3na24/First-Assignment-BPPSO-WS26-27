@@ -1,11 +1,11 @@
 # First Assignment: Business Process Prediction, Simulation, and Optimization (WS 2026/2027)
 
+## **Practical Course - Business Process Prediction, Simulation, and Optimization (IN0012, IN40045)**
+## **Technical University of Munich**
+
 **Author:** Milena Fernanda Rivera Hernández
 
 **19/11/2026**
-
-**Practical Course - Business Process Prediction, Simulation, and Optimization (IN0012, IN40045)**
-**Technical University of Munich**
 
 This repository contains my code for the first assignment. 
 
