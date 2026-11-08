@@ -106,7 +106,16 @@ The notebooks follow the numbering of the assignment instructions:
 
 ## Note on the dataset
 
-The BPI Challenge 2017 event log is **included in this repository** (`data_BPIChallenge2017_1_all/BPI Challenge 2017.xes.gz`) because the official website hosting the dataset was unreachable at the time of the assignment. No download is needed. The notebook loads it with a relative path, so the folder name and file name must not be changed.
+The BPI Challenge 2017 event log (B.F. van Dongen, Eindhoven University of Technology, 2017, doi:10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b) is **included in this repository** (`data_BPIChallenge2017_1_all/BPI Challenge 2017.xes.gz`) because the official website hosting the dataset was unreachable at the time of the assignment. No download is needed. Its metadata (`DATA.xml`) marks the rights as public.
+
+The local notebook loads the log with a relative path, so the folder name and file name must not be changed.
+
+## Running the main notebook locally (`assignmentI.ipynb`)
+
+The project uses [uv](https://docs.astral.sh/uv/) to manage the virtual environment. The repository contains `requirements.txt` and `requirements.lock.txt` (there is no `pyproject.toml` or `uv.lock`).
+
+
+
 
 ## Setting up the environment
 
