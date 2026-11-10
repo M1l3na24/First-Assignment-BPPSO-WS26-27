@@ -273,6 +273,6 @@ I analyzed four papers: the three category winners and one of personal interest.
 
 - **Claude - 08/11/26**
 
-**Promt:** this is my final project, help me check the readme file, https://github.com/M1l3na24/First-Assignment-BPPSO-WS26-27/tree/main give me the corrected version in case it need changes
+**Promt:** this is my final project, help me check the readme file, https://github.com/M1l3na24/First-Assignment-BPPSO-WS26-27/tree/main give me the corrected version in case it need changes in the repo structure. 
 
 **Output:** Readme corrected. It was the baseline for the actual readme found in the repository.

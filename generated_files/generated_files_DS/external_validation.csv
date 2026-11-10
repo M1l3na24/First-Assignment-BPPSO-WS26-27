@@ -1,0 +1,5 @@
+,ARI,NMI,V-measure,pairwise_precision,pairwise_recall,pairwise_F1,n_cases_used
+ApplicationType,-0.038,0.016,0.016,0.78,0.428,0.552,6302.0
+LoanGoal,-0.001,0.005,0.005,0.195,0.439,0.27,6302.0
+RequestedAmount_bin,0.001,0.002,0.002,0.251,0.441,0.32,6302.0
+Outcome,0.898,0.885,0.885,0.926,0.959,0.942,6285.0
