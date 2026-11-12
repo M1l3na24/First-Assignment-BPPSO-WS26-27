@@ -9,7 +9,7 @@
 ---------------------
 ## Usage philosophy
 
-I decided to use GenAI for the initial exploration of potential implementation ideas, highly technical implementations, error handling, and discussion of results.
+I decided to use GenAI for the initial exploration of potential implementation ideas, highly technical implementations, error handling, discussion of results and  improve precision and clarity of my wrtitten ideas.
 
 -----------------
 ## Usage entries
