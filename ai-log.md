@@ -435,3 +435,136 @@ I analyzed four papers: the three category winners and one of personal interest.
 **Output:** Provided LaTeX solutions adjusting scaling parameters using `\textheight` and `\textwidth` along with `keepaspectratio`. Also suggested using the `sidewaysfigure` environment from the `rotating` package to utilize the full height of landscape pages.
 
 ---
+- **Claude - 12/11/26**
+
+**Prompt:** rephrase this: The drawback was that headline numbers were in-sample, so I added a 5-fold cross-validation for the final model.
+
+**Output:**  Here are a few options in your voice (first person, plain, slightly informal):
+
+“The problem is that these numbers come from the same log the model was built on, so I also ran a 5-fold cross-validation for the final model.”
+“Since the headline numbers are measured on the same cases the models were discovered from, they are too optimistic, so I added a 5-fold cross-validation for the final model.”
+“One downside: the main results are in-sample, so to check them on unseen cases I added a 5-fold cross-validation for the final model.”
+
+---
+- **Claude - 12/11/26**
+
+**Prompt:** rephrase this: so cancellations seem time-driven rather than driven by what happens inside the case
+
+**Output:** Here are a few options:
+
+“so cancellations seem to depend more on elapsed time than on what happens during the case.”
+“so it looks like cases get cancelled because of how long they take, not because of anything that happens inside them.”
+“so cancellations appear to be triggered by time passing rather than by the case’s activities.”
+
+---
+- **Claude - 12/11/26**
+
+**Prompt:** I am missing this table, write it in latex: (attached clustering_grid_results-2.csv)
+
+**Output:** Esta es la tabla, con el label tab:adv-grid que ya usas en tu texto:
+\begin{table}[H]
+\caption{K-means grid for both feature sets. Inertia is computed on the training cases; silhouette (Sil.), Davies--Bouldin (DB) and Calinski--Harabasz (CH) on the validation cases. Stability is the mean ARI ($\pm$ std) between the reference clustering and five models trained with other seeds. A configuration is eligible if stability is $\geq 0.80$ and every cluster holds at least $5\%$ of the cases; the selected configuration is in bold.}
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{lrrrrrcr}
+\toprule
+\textbf{Set} & $k$ & \textbf{Inertia} & \textbf{Sil.} & \textbf{DB} & \textbf{CH} & \textbf{Stability (ARI)} & \textbf{Min.\ share (\%)} \\
+\midrule
+Full & 2 & $1{,}320{,}209$ & 0.208 & 1.756 & $1{,}320.7$ & 1.000 $\pm$ 0.000 & 31.23 \\
+Full & 3 & $1{,}213{,}696$ & 0.236 & 1.922 & $1{,}014.8$ & 1.000 $\pm$ 0.000 & 12.30 \\
+Full & 4 & $1{,}140{,}920$ & 0.222 & 2.285 & $846.7$ & 0.941 $\pm$ 0.117 & 12.28 \\
+Full & 5 & $1{,}088{,}236$ & 0.149 & 2.237 & $744.0$ & 0.788 $\pm$ 0.098 & 12.19 \\
+Full & 6 & $1{,}046{,}606$ & 0.178 & 2.166 & $676.1$ & 0.780 $\pm$ 0.087 & 1.43 \\
+Full & 7 & $1{,}010{,}378$ & 0.173 & 2.085 & $620.0$ & 0.719 $\pm$ 0.115 & 1.43 \\
+Full & 8 & $976{,}223$ & 0.186 & 2.017 & $590.7$ & 0.842 $\pm$ 0.066 & 0.59 \\
+Full & 9 & $945{,}436$ & 0.194 & 1.997 & $535.4$ & 0.813 $\pm$ 0.080 & 2.82 \\
+Full & 10 & $919{,}115$ & 0.181 & 1.942 & $521.3$ & 0.680 $\pm$ 0.095 & 2.35 \\
+\midrule
+Compact & 2 & $364{,}951$ & 0.356 & 1.153 & $2{,}571.2$ & 1.000 $\pm$ 0.000 & 31.23 \\
+\textbf{Compact} & \textbf{3} & $\mathbf{313{,}218}$ & \textbf{0.382} & \textbf{1.253} & $\mathbf{2{,}057.0}$ & \textbf{1.000 $\pm$ 0.000} & \textbf{12.31} \\
+Compact & 4 & $282{,}977$ & 0.391 & 1.320 & $1{,}778.7$ & 0.987 $\pm$ 0.009 & 1.75 \\
+Compact & 5 & $257{,}090$ & 0.309 & 1.613 & $1{,}636.8$ & 0.984 $\pm$ 0.004 & 1.75 \\
+Compact & 6 & $236{,}219$ & 0.314 & 1.417 & $1{,}563.8$ & 0.890 $\pm$ 0.098 & 0.59 \\
+Compact & 7 & $221{,}412$ & 0.303 & 1.357 & $1{,}470.8$ & 0.855 $\pm$ 0.086 & 0.59 \\
+Compact & 8 & $212{,}619$ & 0.270 & 1.433 & $1{,}349.4$ & 0.773 $\pm$ 0.121 & 0.59 \\
+Compact & 9 & $195{,}761$ & 0.296 & 1.363 & $1{,}341.3$ & 0.743 $\pm$ 0.025 & 0.59 \\
+Compact & 10 & $186{,}936$ & 0.299 & 1.329 & $1{,}272.0$ & 0.736 $\pm$ 0.021 & 0.51 \\
+\bottomrule
+\end{tabular}
+\label{tab:adv-grid}
+\end{table}
+
+---
+- **ChatGPT - 12/11/26**
+
+**Prompt:** so help me rebuild this part: \textbf{Outcome and duration by outcome} (Fig.~\ref{fig:caseduroutdis}). I defined the outcome as the last of the three outcome activities in a case, not the last event, because 44.7\% of the cases end with \act{O\_Cancelled} and 12.9\% with \act{W\_Validate application}. This gave 17,228 accepted cases (54.7\%), 10,431 cancelled (33.1\%), 3,752 denied (11.9\%) and 98 undecided (0.3\%). This imbalance matters for the clustering section. Accepted and denied cases have a median duration of about 14--15 days with a wide spread, whereas cancelled cases peak around 31--33 days, so it looked like cases got cancelled because of how long they took, not because of anything that happened inside them. The cumulative distribution (bottom left) supports this: roughly 20\% of cancelled cases end before day 30, which suggests active cancellations by the customer or the bank, while about 60\% end within a day or two around day 31, which may suggest a deadline rule. \medskip (attached Case_duration_and_outcome_distribution.pdf)
+
+**Output:** I would restructure this paragraph to make the story flow more naturally: how you defined the outcome → how cases are distributed → how duration differs → what this might tell us.
+
+I'd also avoid saying that cases were cancelled because of how long they took, since the figure shows an association, not causation.
+
+Outcome and duration by outcome. (Fig.~\ref{fig:caseduroutdis}). I defined the outcome as the last of the three outcome activities in a case, rather than the last event, since 44.7\% of cases end with \act{O\_Cancelled} and 12.9\% with \act{W\_Validate application}. This resulted in 17,228 accepted cases (54.7\%), 10,431 cancelled (33.1\%), 3,752 denied (11.9%) and 98 undecided (0.3%). This imbalance is important for the clustering section. Duration also differs by outcome: accepted and denied cases have median durations of around 14--15 days, while cancelled cases typically last around 31--33 days. The cumulative distribution (bottom left) shows that around 60\% of cancellations occur within a narrow window around day 31--33, suggesting a possible deadline-driven pattern. However, earlier cancellations indicate that not all cancellations follow this pattern.
+
+Why I prefer this version
+- It removes the repeated idea that cancellations are caused by duration.
+- It highlights the most interesting finding: the concentration of cancellations around day 31–33.
+- It distinguishes between potentially deadline-driven cancellations and earlier cancellations.
+- It keeps your original tone: straightforward, analytical, and not overly academic.
+One important detail: I would use "suggesting a possible deadline-driven pattern" rather than "suggesting a deadline rule", because the figure alone cannot establish that a formal deadline exists.
+
+---
+- **ChatGPT - 12/11/26**
+
+**Prompt:** (attached screenshot on my table of what each hyperparameter does in the miners) and asked whether it was correct.
+
+**Output:** Yes! Your table is conceptually correct, but I'd make two small adjustments to make the explanations more precise.
+Suggested version
+Parameter	What it does
+dependency_threshold	Measures how much more frequently activity a is directly followed by b than the reverse. The arc \(a \rightarrow b\) is kept if its dependency value exceeds the threshold.
+and_threshold	Determines whether multiple successors of an activity represent parallel execution (AND) or alternative choices (XOR). If the AND measure exceeds the threshold, an AND split is selected.
+
+One important clarification
+The dependency_threshold does not simply compare the number of times \(a \rightarrow b\) occurs against \(b \rightarrow a\). It uses a dependency measure that normalizes this difference.
+
+For example:
+- If A is frequently followed by B, but B is rarely followed by A, the dependency is strong.
+- If A and B follow each other equally often, the dependency is weak.
+My recommendation: Your original wording is good for an assignment report. Use the revised version above because it is slightly more technically precise.
+
+---
+- **ChatGPT - 12/11/26**
+
+**Prompt:** I feel this paragraph isn't connecting correctly: K-means ($k=3$) then separates direct completion ($57.9\%$), cancelled ($30.1\%$) and denied ($12.0\%$) cases, which differ in duration and resources and provide case-type parameters for further approaches such as simulation.
+\end{abstract}
+
+**Output:** I think the connection would be smoother if you explain what K-means achieves before listing the three groups.
+
+I'd write:
+K-means ($k=3$) identifies three main case types: direct completion ($57.9%$), cancellation ($30.1%$), and denial ($12.0%$). These groups also differ in duration and resource use, providing useful parameters for further approaches such as simulation.
+
+This flows better because:
+- First, you introduce what K-means identifies.
+- Then, you present the three case types.
+- Finally, you explain why this classification matters for simulation.
+It also avoids the slightly awkward transition created by "then separates".
+
+---
+- **ChatGPT - 12/11/26**
+
+**Prompt:** the "two of which are" doesn't convince me:  Participants could use any technique to address one or more of the process owner's questions, two of which are:
+
+**Output:** I agree, "two of which are" sounds a little awkward. I'd suggest:
+
+Option 1 (most natural):
+Participants could use any technique to address one or more of the process owner's questions, including the following two:
+
+Option 2 (more formal):
+Participants could use any technique to address one or more of the process owner's questions. Two examples are:
+
+Option 3 (simple and direct):
+Participants could use any technique to address the process owner's questions, such as:
+
+I'd choose Option 1 if you are introducing exactly two questions.
+
+---
