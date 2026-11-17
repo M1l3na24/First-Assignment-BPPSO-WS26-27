@@ -18,7 +18,7 @@ The work is split into three notebooks. One runs locally and two run in Google C
 | Notebook | Where it runs | What it covers |
 |----------|---------------|----------------|
 | `notebooks/assignmentI.ipynb` | **Locally** (VS Code + `.venv`) | Sections 3.1 to 3.3: setup, simple event log analysis, process discovery, quality metrics and final model |
-| `notebooks/Advanced_Data_Science_AnalysisI.ipynb` | **Google Colab only** | Section 3.4 (Option 2): case-level feature engineering and K-means clustering with cuML |
+| `notebooks/Advanced_Data_Science_AnalysisFI.ipynb` | **Google Colab only** | Section 3.4 (Option 2): case-level feature engineering and K-means clustering with cuML |
 | `notebooks/Visualization_petri_nets.ipynb` | **Google Colab** (or locally, if Graphviz works on your machine) | Supplementary: draws the Petri nets and the final BPMN model as PDF figures from the exported model files |
 
 > SUPER IMPORTANT: The clustering notebook is **not** meant to run in the local `.venv`: it depends on RAPIDS (cuML) and a CUDA GPU, which are not part of `requirements.txt`.
@@ -41,11 +41,11 @@ The visualization notebook exists because the PM4Py drawing functions need the G
 │   └── DATA.xml                    # metadata describing the structure of the log
 ├── notebooks/
 │   ├── assignmentI.ipynb                       # sections 3.1-3.3 (local)
-│   ├── Advanced_Data_Science_AnalysisI.ipynb   # section 3.4, clustering (Colab)
+│   ├── Advanced_Data_Science_AnalysisFI.ipynb   # section 3.4, clustering (Colab)
 │   └── Visualization_petri_nets.ipynb          # Petri net and BPMN figures (Colab)
 └── generated_files/                # final outputs, one subfolder per notebook
     ├── generated_files_I/          # created by assignmentI.ipynb
-    ├── generated_files_DS/         # created by Advanced_Data_Science_AnalysisI.ipynb
+    ├── generated_files_DS/         # created by Advanced_Data_Science_AnalysisFI.ipynb
     ├── generated_files_PN/         # created by Visualization_petri_nets.ipynb
     └── generated_files_past_run/   # stores past versions of some generated files in past executions
 ```
@@ -62,7 +62,7 @@ The notebooks follow the numbering of the assignment instructions:
 | 3.2 Simple Event Log Analysis | `assignmentI.ipynb` | Basic statistics table, case-level table, additional statistics and visualizations |
 | 3.3 Process Model Creation and Validation | `assignmentI.ipynb` | Alpha Miner, Heuristics Miner, Inductive Miner; hyperparameter grid search; PM4Py quality metrics plus custom simplicity metrics; replay diagnostics; final model refinement |
 | 3.3 (figures) | `Visualization_petri_nets.ipynb` | Petri net figures of the three miners and of the final model, final BPMN 2.0 model |
-| 3.4 Advanced Analysis (Option 2) | `Advanced_Data_Science_AnalysisI.ipynb` | Hypothesis, case-level feature engineering (`create_case_features`), K-means grid search (feature set x number of clusters), stability, cluster interpretation for simulation |
+| 3.4 Advanced Analysis (Option 2) | `Advanced_Data_Science_AnalysisFI.ipynb` | Hypothesis, case-level feature engineering (`create_case_features`), K-means grid search (feature set x number of clusters), stability, cluster interpretation for simulation |
 
 ### Files in `generated_files/generated_files_I/` (from `assignmentI.ipynb`)
 
@@ -84,7 +84,7 @@ The notebooks follow the numbering of the assignment instructions:
 | `final_model.pnml` | Final model as Petri net |
 | `final_model.ptml` | Final model as process tree (used to create the BPMN model) |
 
-### Files in `generated_files/generated_files_DS/` (from `Advanced_Data_Science_AnalysisI.ipynb`)
+### Files in `generated_files/generated_files_DS/` (from `Advanced_Data_Science_AnalysisFI.ipynb`)
 
 | File | Content |
 |------|---------|
@@ -171,9 +171,9 @@ I used VS code, so I recommend it, however you may use the IDE of your preferenc
 
 All analyses and quality metrics are computed in Python with open-source tools; no commercial software is used.
 
-## Running the clustering analysis in Google Colab (`Advanced_Data_Science_AnalysisI.ipynb`)
+## Running the clustering analysis in Google Colab (`Advanced_Data_Science_AnalysisFI.ipynb`)
 
-1. **Open the notebook in Colab.** Go to [colab.research.google.com](https://colab.research.google.com), choose the **GitHub** tab and paste the repository URL, or upload `notebooks/Advanced_Data_Science_AnalysisI.ipynb` directly.
+1. **Open the notebook in Colab.** Go to [colab.research.google.com](https://colab.research.google.com), choose the **GitHub** tab and paste the repository URL, or upload `notebooks/Advanced_Data_Science_AnalysisFI.ipynb` directly.
 2. **Select a GPU runtime:** *Runtime → Change runtime type → T4 GPU* (or better).
 3. **Upload the dataset.** Put `BPI Challenge 2017.xes.gz` (from `data_BPIChallenge2017_1_all/`) in the Colab session storage, in the same folder as the notebook (the default `/content`).
 4. **Run all cells in order** (*Runtime → Run all*). The first cell installs `pm4py`.
