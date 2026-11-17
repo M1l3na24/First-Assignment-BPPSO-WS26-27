@@ -568,3 +568,20 @@ Participants could use any technique to address the process owner's questions, s
 I'd choose Option 1 if you are introducing exactly two questions.
 
 ---
+
+- **Claude - 17/11/26**
+
+**Prompt:** hey claude, I need to rephrase this : Heuristics and Inductive Miners were tuned by grid search. The past and Alpha Miner were compared with token-based replay and four simplicity metrics,
+
+**Output:** Suggested rewrite: “The Heuristics and Inductive Miners were tuned by grid search. The best-performing configurations of both were then compared with the Alpha Miner using token-based replay and four simplicity metrics.”
+
+
+---
+
+- **Claude - 17/11/26**
+
+**Prompt:** help me check for spelling and grammar mistakes only
+
+**Output:** "Found spelling and grammar issues, going section by section. I left the content alone."
+
+---
